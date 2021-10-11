@@ -3,7 +3,7 @@ const vscode = require("vscode");
 const nuxt = require("./main");
 const path = require("path");
 const i18n = require("i18n");
-const supportedLocales = ["en", "pt-br"];
+const supportedLocales = ["en", "fr", "pt-br"];
 
 const activate = async (context) => {
   console.log(path.join(context.extensionPath, "assets", "locales"));
