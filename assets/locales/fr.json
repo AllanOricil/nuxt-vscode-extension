@@ -1,0 +1,17 @@
+{
+	"statusBarButtons.startDevServer.text": "Lancer Nuxt",
+	"statusBarButtons.startDevServer.tooltip": "Démarre le serveur de développement Nuxt",
+	"statusBarButtons.openApp.text": "Ouvrir l'app",
+	"statusBarButtons.openApp.tooltip": "Ouvre votre application dans votre navigateur par défaut",
+	"statusBarButtons.setPortNumber.tooltip": "Cliquez pour choisir le port par défaut que l'appli Nuxt occupera",
+	"inputBoxes.setPortNumber.prompt": "Choisissez le port par défaut que l'appli Nuxt occupera",
+	"inputBoxes.setPortNumber.placeHolder": "Entrez un nom de port valide (ex: 3000, 80...)",
+	"inputBoxes.createApp.prompt": "Entrez un nom pour votre application",
+	"inputBoxes.createApp.placeHolder": "Utilisez des caractères adaptés aux URL (ex: nom_appli, nom-appli, nomAppli...)",
+	"errors.portNumberIsNotValid": "Ce numéro de port n'est pas correct",
+	"errors.portNumberIsNotAvailable": "Ce numéro de port n'est pas disponible",
+	"errors.appNameIsNotValid": "Le nom de l'application est invalide",
+	"openDialogs.createApp.selectDirectory.openLabel": "Créer une appli Nuxt ici",
+	"openDialogs.createApp.selectDirectory.title": "Selection du futur répertoire de projet Nuxt",
+	"informationMessages.nuxtExtensionIsReady" : "L'extension Nuxt est prête"
+}
