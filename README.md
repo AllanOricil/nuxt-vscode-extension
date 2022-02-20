@@ -10,11 +10,11 @@ This extension aims to simplify the workflow when coding with Nuxt in VS Code
 
 ## Features
 
-- Start the dev server clicking on the "Start Dev" button present in the status bar
+- Start dev server clicking on the "Start Dev" button present in the status bar
 
 <img src="https://drive.google.com/uc?id=1yhkQn3ZvMSDn3ELaDdpgPTtsHyEY_-Fq"></img>
 
-- Open the App in your OS's default browser clicking on the "Open App" button present in the status bar
+- Open App in your OS's default browser clicking on the "Open App" button present in the status bar
 
 <img src="https://drive.google.com/uc?id=1oD9cnv3nw5AcyJwQoscEAJsrzPj_dgeE"></img>
 
@@ -28,24 +28,28 @@ This extension aims to simplify the workflow when coding with Nuxt in VS Code
 
 ## Requirements
 
-- Node >= 12.22.0
+- Node >= 14.x
 - npm >= 5.2.0 => this version has npx which is used on the "Nuxt: Create App" command
 
 <!-- COMMANDS_START -->
+
 ## Commands (2)
 
-|Command|Description|
-|-|-|
-|Nuxt.startDevServer|Nuxt: Start Dev Server|
-|Nuxt.openApp|Nuxt: Open App|
-|Nuxt.setPortNumber|Nuxt: Set Port Number|
-|Nuxt.createNuxtApp|Nuxt: Create Nuxt App|
+| Command             | Description            |
+| ------------------- | ---------------------- |
+| Nuxt.startDevServer | Nuxt: Start Dev Server |
+| Nuxt.openApp        | Nuxt: Open App         |
+| Nuxt.setPortNumber  | Nuxt: Set Port Number  |
+| Nuxt.createNuxtApp  | Nuxt: Create Nuxt App  |
+
 <!-- COMMANDS_END -->
 
 <!-- SETTINGS_START -->
+
 ## Settings (1)
 
-|Setting|Type|Default|Description|
-|-|-|-|-|
-|nuxt.portNumber|number|**3000**|It is the port number that the Nuxt app is served at. If you empty this property, the app is served on port 3000|
+| Setting         | Type   | Default  | Description                                                                                             |
+| --------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------- |
+| nuxt.portNumber | number | **3000** | It is the port number used by your Nuxt App. If you empty this property, the app is served on port 3000 |
+
 <!-- SETTINGS_END -->

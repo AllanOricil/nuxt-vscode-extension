@@ -1,5 +1,5 @@
 {
-    "statusBarButtons.startDevServer.text": "Iniciar Dev",
+    "statusBarButtons.startDevServer.text": "Iniciar App Nuxt",
 	"statusBarButtons.startDevServer.tooltip": "Inicia o aplicativo em modo de Desenvolvimento",
 	"statusBarButtons.openApp.text": "Abrir App",
 	"statusBarButtons.openApp.tooltip": "Abre o aplicativo no Navegador Padrão",
@@ -12,6 +12,4 @@
     "errors.portNumberIsNotAvailable" : "A Porta não está disponível",
     "errors.appNameIsNotValid" : "O nome do aplicativo não é válido",
     "openDialogs.createApp.selectDirectory.openLabel": "Criar Aplicativo Nuxt",
-	"openDialogs.createApp.selectDirectory.title": "Seleção de Pasta para o aplicativo Nuxt",
-	"informationMessages.nuxtExtensionIsReady" : "A extensão Nuxt está pronta para uso"
-}
+	"openDialogs.createApp.selectDirectory.title": "Seleção de Pasta para o aplicativo Nuxt"

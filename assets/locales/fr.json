@@ -12,6 +12,5 @@
 	"errors.portNumberIsNotAvailable": "Ce numéro de port n'est pas disponible",
 	"errors.appNameIsNotValid": "Le nom de l'application est invalide",
 	"openDialogs.createApp.selectDirectory.openLabel": "Créer une appli Nuxt ici",
-	"openDialogs.createApp.selectDirectory.title": "Selection du futur répertoire de projet Nuxt",
-	"informationMessages.nuxtExtensionIsReady" : "L'extension Nuxt est prête"
+	"openDialogs.createApp.selectDirectory.title": "Selection du futur répertoire de projet Nuxt"
 }

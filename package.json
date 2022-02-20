@@ -17,9 +17,9 @@
     "color": "#2F495E",
     "theme": "dark"
   },
-  "version": "0.0.16",
+  "version": "0.0.17",
   "engines": {
-    "node": "12.22.0",
+    "node": "14.x",
     "vscode": "^1.60.0"
   },
   "categories": [
@@ -59,7 +59,7 @@
         "nuxt.portNumber": {
           "type": "number",
           "default": 3000,
-          "description": "It is the port number that the Nuxt app is served at. If you empty this property, the app is served on port 3000"
+          "description": "It is the port number used by your Nuxt App. If you empty this property, the app is served on port 3000"
         }
       }
     }
