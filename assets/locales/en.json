@@ -12,6 +12,5 @@
 	"errors.portNumberIsNotAvailable": "Port Number is not Available",
 	"errors.appNameIsNotValid": "App Name is not Valid",
 	"openDialogs.createApp.selectDirectory.openLabel": "Create Nuxt App",
-	"openDialogs.createApp.selectDirectory.title": "Nuxt App Directory Selection",
-	"informationMessages.nuxtExtensionIsReady" : "Nuxt extension is Ready"
+	"openDialogs.createApp.selectDirectory.title": "Nuxt App Directory Selection"
 }
