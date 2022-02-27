@@ -17,7 +17,7 @@
     "color": "#2F495E",
     "theme": "dark"
   },
-  "version": "0.0.18",
+  "version": "0.0.19",
   "engines": {
     "node": "14.x",
     "vscode": "^1.60.0"
@@ -50,6 +50,18 @@
       {
         "command": "Nuxt.setPortNumber",
         "title": "Nuxt: Set Port Number"
+      },
+      {
+        "command": "Nuxt.ceateStandardDirectories",
+        "title": "Nuxt: Create Standard Directories"
+      },
+      {
+        "command": "Nuxt.createPage",
+        "title": "Nuxt: Create Page"
+      },
+      {
+        "command": "Nuxt.createComponent",
+        "title": "Nuxt: Create Component"
       }
     ],
     "menus": {},
@@ -104,6 +116,7 @@
     "eslint-config-prettier": "^8.3.0",
     "has-yarn": "^2.1.0",
     "i18n": "^0.13.3",
+    "is-valid-path": "^0.1.1",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
     "tcp-port-used": "^1.0.2"

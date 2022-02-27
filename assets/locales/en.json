@@ -7,10 +7,18 @@
 	"inputBoxes.setPortNumber.prompt": "Click to choose the default port number that your app will use",
 	"inputBoxes.setPortNumber.placeHolder": "Type in a valid Port Number",
 	"inputBoxes.createApp.prompt": "Type in a Name for your App",
-	"inputBoxes.createApp.placeHolder": "Use URL friendly characters for your App, eg: app_name, app-name, appName",
+	"inputBoxes.createApp.placeHolder": "example: app_name, app-name, appName",
 	"errors.portNumberIsNotValid": "Port Number is not Valid",
 	"errors.portNumberIsNotAvailable": "Port Number is not Available",
 	"errors.appNameIsNotValid": "App Name is not Valid",
 	"openDialogs.createApp.selectDirectory.openLabel": "Create Nuxt App",
-	"openDialogs.createApp.selectDirectory.title": "Nuxt App Directory Selection"
+	"openDialogs.createApp.selectDirectory.title": "Nuxt App Directory Selection",
+	"errors.couldNotCreateStandardDirectories": "Could not create the Standard Directories",
+	"inputBoxes.createPage.prompt": "Type in a valid path or a name for your new page",
+	"inputBoxes.createPage.placeHolder": "page.vue, _slug/page.vue, dir/_slug/page.vue",
+	"inputBoxes.createComponent.prompt": "Type in a valid path or a name for your new Component",
+	"inputBoxes.createComponent.placeHolder": "component.vue, dir/component.vue, dir/other-dir/component.vue",
+	"errors.couldNotCreateComponent": "Could not create your component",
+	"errors.wrongExtension": "Could not create your component. Component's name must end with .vue",
+	"errors.invalidPath": "Path is not valid. Please, follow these examples: {0}"
 }

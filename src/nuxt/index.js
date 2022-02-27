@@ -1,15 +1,10 @@
 const vscode = require("vscode");
-const path = require("path");
 const fs = require("fs");
 const hasYarn = require("has-yarn");
-
-const NUXT_CONFIG_PATH = path.join(
-  vscode.workspace.workspaceFolders[0].uri.fsPath,
-  "nuxt.config.js"
-);
+const constants = require("../constants");
 
 const isNuxtProject = () => {
-  return fs.existsSync(NUXT_CONFIG_PATH);
+  return fs.existsSync(constants.NUXT_CONFIG_URI.fsPath);
 };
 
 const disposeTerminals = () => {
@@ -28,19 +23,17 @@ const getAppUrl = () => {
   return vscode.Uri.parse(`http://localhost:${getAppPortNumber()}`);
 };
 
-const getWorkspaceConfiguration = () => {
-  return vscode.workspace.getConfiguration("nuxt");
-};
+const workspaceConfiguration = vscode.workspace.getConfiguration("nuxt");
 
 const getAppPortNumber = () => {
-  return getWorkspaceConfiguration().get("portNumber") || 3000;
+  return workspaceConfiguration.get("portNumber") || constants.NUXT_DEFAULT_PORT_NUMBER;
 };
 
 module.exports = {
   startDevServerCommand,
   getAppUrl,
   getAppPortNumber,
-  getWorkspaceConfiguration,
+  workspaceConfiguration,
   isNuxtProject,
   disposeTerminals,
 };

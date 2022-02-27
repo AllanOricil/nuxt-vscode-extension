@@ -1,26 +1,17 @@
 const vscode = require("vscode");
-const {
-  onClickStartDevServer,
-  onClickOpenApp,
-  onClickSetPortNumber,
-  onClickCreateApp,
-} = require("./handlers");
-const nuxt = require("../../nuxt");
-
-const registerCommand = (context, command, handler) => {
-  context.subscriptions.push(vscode.commands.registerCommand(command, handler));
-};
+const handlers = require("./handlers");
 
 const activate = (context) => {
-  nuxt.disposeTerminals();
-  registerCommand(context, "Nuxt.startDevServer", onClickStartDevServer);
-  registerCommand(context, "Nuxt.openApp", onClickOpenApp);
-  registerCommand(context, "Nuxt.setPortNumber", onClickSetPortNumber);
-  registerCommand(context, "Nuxt.createApp", onClickCreateApp);
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.startDevServer", handlers.onStartDevServer))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.openApp", handlers.onOpenApp))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.setPortNumber", handlers.onSetPortNumber))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createApp", handlers.onCreateApp))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.ceateStandardDirectories", handlers.onCreateStandardDirectories))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createPage", handlers.onCreatePage))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createComponent", handlers.onCreateComponent))
 };
 
 const deactivate = () => {
-  nuxt.disposeTerminals();
 };
 
 module.exports = {

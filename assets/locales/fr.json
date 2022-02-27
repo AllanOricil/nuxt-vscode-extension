@@ -12,5 +12,13 @@
 	"errors.portNumberIsNotAvailable": "Ce numéro de port n'est pas disponible",
 	"errors.appNameIsNotValid": "Le nom de l'application est invalide",
 	"openDialogs.createApp.selectDirectory.openLabel": "Créer une appli Nuxt ici",
-	"openDialogs.createApp.selectDirectory.title": "Selection du futur répertoire de projet Nuxt"
+	"openDialogs.createApp.selectDirectory.title": "Selection du futur répertoire de projet Nuxt",
+	"errors.couldNotCreateStandardDirectories": "Impossible de créer des répertoires standard",
+	"inputBoxes.createPage.prompt": "Tapez un chemin valide ou un nom pour votre nouvelle page",
+	"inputBoxes.createPage.placeHolder": "page.vue, _slug/page.vue, dir/_slug/page.vue",
+	"inputBoxes.createComponent.prompt": "Tapez un chemin valide ou un nom pour votre nouveau composant",
+	"inputBoxes.createComponent.placeHolder": "component.vue, dir/component.vue, dir/other-dir/component.vue",
+	"errors.couldNotCreateComponent": "Impossible de créer votre composant",
+	"errors.wrongExtension": "Impossible de créer votre composant. Le nom du composant doit se terminer par .vue",
+	"errors.invalidPath": "Le chemin n'est pas valide. Veuillez suivre ces exemples : {0}"
 }

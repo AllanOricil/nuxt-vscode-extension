@@ -7,10 +7,13 @@ const {
   startDevServerCommand,
   getAppUrl,
   getAppPortNumber,
-  getWorkspaceConfiguration,
+  workspaceConfiguration
 } = require("../../nuxt");
+const constants = require("../../constants");
+const isValidPath = require("is-valid-path");
+const path = require('path');
 
-const onClickStartDevServer = () => {
+const onStartDevServer = () => {
   const startDevServerButton = getButton("Nuxt.startDevServer");
   const openAppButton = getButton("Nuxt.openApp");
 
@@ -38,11 +41,11 @@ const onClickStartDevServer = () => {
   openAppButton.show();
 };
 
-const onClickOpenApp = () => {
+const onOpenApp = () => {
   vscode.env.openExternal(getAppUrl());
 };
 
-const onClickSetPortNumber = () => {
+const onSetPortNumber = () => {
   const setPortNumberButton = getButton("Nuxt.setPortNumber");
   vscode.window
     .showInputBox({
@@ -54,7 +57,7 @@ const onClickSetPortNumber = () => {
         tcpPortUsed.check(parseInt(portNumber)).then(
           (inUse) => {
             if (!inUse) {
-              getWorkspaceConfiguration()
+              workspaceConfiguration
                 .update("portNumber", parseInt(portNumber))
                 .then(() => {
                   setPortNumberButton.text = `$(ports-open-browser-icon) ${portNumber}`;
@@ -78,7 +81,7 @@ const onClickSetPortNumber = () => {
     });
 };
 
-const onClickCreateApp = () => {
+const onCreateApp = () => {
   vscode.window
     .showOpenDialog({
       canSelectFolders: true,
@@ -113,9 +116,67 @@ const onClickCreateApp = () => {
     });
 };
 
+const onCreateStandardDirectories = () => {
+  Promise.all(
+    constants.NUXT_DIRECTORIES.map((directory) => {
+      vscode.workspace.fs.createDirectory(
+        vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, directory)
+      )
+    })
+  )
+  .catch(() => {
+    vscode.window.showErrorMessage(
+      i18n.__("errors.couldNotCreateStandardDirectories")
+    );
+  });
+}
+
+const createComponent = (parentDirectory, inputPrompt, inputPlaceHolder) => {
+  vscode.window
+    .showInputBox({
+      prompt: inputPrompt,
+      placeHolder: inputPlaceHolder,
+    })
+    .then((newComponentPath) => {
+      if(isValidPath(newComponentPath)){
+        if(path.extname(newComponentPath) === '.vue'){
+          const componentPath = vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, parentDirectory, newComponentPath);
+          vscode.workspace.fs.writeFile(
+            componentPath, 
+            Buffer.from(constants.VUE_COMPONENT_SNIPPET, 'utf-8')
+          )
+          .then(() => {
+            vscode.workspace.openTextDocument(componentPath)
+            .then((componentDoc) => {
+              vscode.window.showTextDocument(componentDoc);
+            });
+          })
+          .catch(() => {
+            vscode.window.showErrorMessage(i18n.__("errors.couldNotCreateComponent"));
+          })
+        }else{
+          vscode.window.showErrorMessage(i18n.__("errors.wrongExtension"));
+        }
+      }else{
+        vscode.window.showErrorMessage(i18n.__("errors.invalidPath").replace('{0}', inputPlaceHolder));
+      }
+    })
+}
+
+const onCreatePage = () => {
+  createComponent('pages',  i18n.__("inputBoxes.createPage.prompt"), i18n.__("inputBoxes.createPage.placeHolder"));
+}
+
+const onCreateComponent = () => {
+  createComponent('components',  i18n.__("inputBoxes.createComponent.prompt"), i18n.__("inputBoxes.createComponent.placeHolder"));
+}
+
 module.exports = {
-  onClickStartDevServer,
-  onClickOpenApp,
-  onClickSetPortNumber,
-  onClickCreateApp,
+  onStartDevServer,
+  onOpenApp,
+  onSetPortNumber,
+  onCreateApp,
+  onCreatePage,
+  onCreateComponent,
+  onCreateStandardDirectories
 };

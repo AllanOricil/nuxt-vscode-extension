@@ -1,8 +1,8 @@
 const vscode = require("vscode");
 const i18n = require("i18n");
 const { getAppPortNumber } = require("../../nuxt");
+const constants = require('../../constants');
 
-const BUTTONS_START_INDEX = 150;
 const buttons = {};
 
 const createButton = (command, text, tooltip, alignment, index) => {
@@ -25,7 +25,7 @@ const activate = (context) => {
       `$(notebook-execute) ${i18n.__("statusBarButtons.startDevServer.text")}`,
       i18n.__("statusBarButtons.startDevServer.tooltip"),
       vscode.StatusBarAlignment.Left,
-      BUTTONS_START_INDEX
+      constants.BUTTONS_START_INDEX
     )
   );
 
@@ -35,7 +35,7 @@ const activate = (context) => {
       `$(default-view-icon) ${i18n.__("statusBarButtons.openApp.text")}`,
       i18n.__("statusBarButtons.openApp.tooltip"),
       vscode.StatusBarAlignment.Left,
-      BUTTONS_START_INDEX
+      constants.BUTTONS_START_INDEX
     )
   );
 
@@ -45,7 +45,7 @@ const activate = (context) => {
       `$(ports-open-browser-icon) ${getAppPortNumber()}`,
       i18n.__("statusBarButtons.setPortNumber.tooltip"),
       vscode.StatusBarAlignment.Left,
-      BUTTONS_START_INDEX - 1
+      constants.BUTTONS_START_INDEX - 1
     )
   );
 
@@ -54,9 +54,7 @@ const activate = (context) => {
 };
 
 const deactivate = () => {
-  buttons["Nuxt.startDevServer"].dispose();
-  buttons["Nuxt.openApp"].dispose();
-  buttons["Nuxt.setPortNumber"].dispose();
+  Object.values(buttons).dispose();
 };
 
 module.exports = {

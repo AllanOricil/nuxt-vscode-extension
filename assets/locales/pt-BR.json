@@ -7,10 +7,18 @@
     "inputBoxes.setPortNumber.prompt" :"Escolha a Porta padrão em que o aplicativo irá executar",
     "inputBoxes.setPortNumber.placeHolder" : "Digite um número de Porta válido",
     "inputBoxes.createApp.prompt": "Digite um nome para o seu aplicativo",
-	"inputBoxes.createApp.placeHolder": "Use caracteres para formar uma url válida, como por exemplo: nome_do_app, nome-do-app, nomeDoApp",
+	"inputBoxes.createApp.placeHolder": "exemplo: nome_do_app, nome-do-app, nomeDoApp",
     "errors.portNumberIsNotValid" : "A Porta não é válida",
     "errors.portNumberIsNotAvailable" : "A Porta não está disponível",
     "errors.appNameIsNotValid" : "O nome do aplicativo não é válido",
     "openDialogs.createApp.selectDirectory.openLabel": "Criar Aplicativo Nuxt",
-	"openDialogs.createApp.selectDirectory.title": "Seleção de Pasta para o aplicativo Nuxt"
+	"openDialogs.createApp.selectDirectory.title": "Seleção de Pasta para o aplicativo Nuxt",
+    "errors.couldNotCreateStandardDirectories": "Não foi possível criar os diretórios padrão",
+    "inputBoxes.createPage.prompt": "Digite um caminho ou o nome para a sua nova página",
+    "inputBoxes.createPage.placeHolder": "page.vue, _slug/page.vue, dir/_slug/page.vue",
+    "inputBoxes.createComponent.prompt": "Digite um caminho ou o nome para o seu novo componente",
+	"inputBoxes.createComponent.placeHolder": "component.vue, dir/component.vue, dir/other-dir/component.vue",
+    "errors.couldNotCreateComponent": "Não foi possível criar o seu componente",
+	"errors.wrongExtension": "Não foi possível criar o seu componente. O Nome do componente precisa terminar com .vue",
+	"errors.invalidPath": "Caminho inválido. Por favor, siga estes exemplos: {0}"
 }
