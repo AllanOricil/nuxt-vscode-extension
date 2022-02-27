@@ -18,7 +18,11 @@
 	"inputBoxes.createPage.placeHolder": "page.vue, _slug/page.vue, dir/_slug/page.vue",
 	"inputBoxes.createComponent.prompt": "Tapez un chemin valide ou un nom pour votre nouveau composant",
 	"inputBoxes.createComponent.placeHolder": "component.vue, dir/component.vue, dir/other-dir/component.vue",
+	"inputBoxes.createStore.prompt": "Tapez un chemin valide ou un nom pour votre nouveau Store",
+	"inputBoxes.createStore.placeHolder": "todos, moduleA/moduleB, index.js, cart.js, moduleA/moduleB/example.js",
 	"errors.couldNotCreateComponent": "Impossible de créer votre composant",
 	"errors.wrongExtension": "Impossible de créer votre composant. Le nom du composant doit se terminer par .vue",
-	"errors.invalidPath": "Le chemin n'est pas valide. Veuillez suivre ces exemples : {0}"
+	"errors.invalidPath": "Le chemin n'est pas valide. Veuillez suivre ces exemples : {0}",
+	"errors.couldNotCreateStore": "Impossible de créer le Store",
+	"errors.invalidFileExtension": "Extension de fichier invalide. Vous ne pouvez utiliser .js que pour les Stores définis par un seul fichier"
 }

@@ -9,6 +9,7 @@ const activate = (context) => {
   context.subscriptions.push(vscode.commands.registerCommand("Nuxt.ceateStandardDirectories", handlers.onCreateStandardDirectories))
   context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createPage", handlers.onCreatePage))
   context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createComponent", handlers.onCreateComponent))
+  context.subscriptions.push(vscode.commands.registerCommand("Nuxt.createStore", handlers.onCreateStore))
 };
 
 const deactivate = () => {

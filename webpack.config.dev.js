@@ -20,6 +20,18 @@ const config = {
   resolve: {
     extensions: [".js"],
   },
+  module: {
+    rules: [
+      {
+        test: /\.txt$/i,
+        use: [
+          {
+            loader: 'raw-loader'
+          },
+        ],
+      },
+    ]
+  },
   plugins: [new CleanWebpackPlugin(), new Dotenv()],
 };
 module.exports = config;

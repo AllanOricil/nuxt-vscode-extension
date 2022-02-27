@@ -37,6 +37,18 @@ const config = {
       []
     ),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.txt$/i,
+        use: [
+          {
+            loader: 'raw-loader'
+          },
+        ],
+      },
+    ]
+  },
   optimization: {
     minimize: true,
     minimizer: [

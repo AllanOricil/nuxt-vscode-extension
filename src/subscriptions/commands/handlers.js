@@ -171,6 +171,59 @@ const onCreateComponent = () => {
   createComponent('components',  i18n.__("inputBoxes.createComponent.prompt"), i18n.__("inputBoxes.createComponent.placeHolder"));
 }
 
+const onCreateStore = () => {
+  vscode.window
+    .showInputBox({
+      prompt: i18n.__("inputBoxes.createStore.prompt"),
+      placeHolder: i18n.__("inputBoxes.createStore.placeHolder"),
+    })
+    .then((newStorePath) => {
+      if(isValidPath(newStorePath)){
+        const newStorePathExtension = path.extname(newStorePath);
+        if(newStorePathExtension === '.js'){
+          const storePath = vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, 'store', newStorePath);
+          vscode.workspace.fs.writeFile(
+            storePath, 
+            Buffer.from(constants.VUEX_SINGLE_FILE_STORE, 'utf-8')
+          )
+          .then(() => {
+            vscode.workspace.openTextDocument(storePath)
+            .then((storeDoc) => {
+              vscode.window.showTextDocument(storeDoc);
+            });
+          })
+          .catch(() => {
+            vscode.window.showErrorMessage(i18n.__("errors.couldNotCreateStore"));
+            vscode.workspace.fs.delete(storePath, { recursive: true })
+          })
+        }else if(newStorePathExtension === ''){
+          Promise.all(
+            [
+              vscode.workspace.fs.writeFile(
+                vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, 'store', newStorePath, 'state.js'),
+                Buffer.from(`export default () => ({})`, 'utf-8')
+              ),
+              ...['actions.js', 'getters.js', 'mutations.js'].map((storeComponent) => {
+                return vscode.workspace.fs.writeFile(
+                  vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, 'store', newStorePath, storeComponent),
+                  Buffer.from(`export default {}`, 'utf-8')
+                )
+              })
+            ]
+          )
+          .catch(() => {
+            vscode.window.showErrorMessage(i18n.__("errors.couldNotCreateStore"));
+            vscode.workspace.fs.delete(vscode.Uri.joinPath(constants.NUXT_PROJECT_URI, 'store', newStorePath), { recursive: true })
+          })
+        }else{
+          vscode.window.showErrorMessage(i18n.__("errors.invalidFileExtension"));
+        }
+      }else{
+        vscode.window.showErrorMessage(i18n.__("errors.invalidPath").replace('{0}', i18n.__("inputBoxes.createStore.placeHolder")));
+      }
+    })
+}
+
 module.exports = {
   onStartDevServer,
   onOpenApp,
@@ -178,5 +231,6 @@ module.exports = {
   onCreateApp,
   onCreatePage,
   onCreateComponent,
-  onCreateStandardDirectories
+  onCreateStandardDirectories,
+  onCreateStore
 };
