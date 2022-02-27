@@ -54,9 +54,9 @@ const activate = (context) => {
 };
 
 const deactivate = () => {
-  startDevServerButton.dispose();
-  openAppButton.dispose();
-  setPortNumberButton.dispose();
+  buttons["Nuxt.startDevServer"].dispose();
+  buttons["Nuxt.openApp"].dispose();
+  buttons["Nuxt.setPortNumber"].dispose();
 };
 
 module.exports = {
