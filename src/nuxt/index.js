@@ -2,7 +2,6 @@ const vscode = require("vscode");
 const fs = require("fs");
 const hasYarn = require("has-yarn");
 const constants = require("../constants");
-const i18n = require("i18n");
 
 const isNuxtProject = () => {
   return fs.existsSync(constants.NUXT_CONFIG_URI.fsPath);

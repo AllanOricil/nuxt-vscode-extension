@@ -4,7 +4,7 @@
 <a href="https://marketplace.visualstudio.com/items?itemName=allanoricil.nuxt-vscode-extension" target="_blank" rel="noreferrer noopener"><img src="https://vsmarketplacebadge.apphb.com/downloads/allanoricil.nuxt-vscode-extension.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=DOWNLOADS" alt="Downloads"></a>
 <a href="https://marketplace.visualstudio.com/items?itemName=allanoricil.nuxt-vscode-extension" target="_blank" rel="noreferrer noopener"><img src="https://vsmarketplacebadge.apphb.com/rating-star/allanoricil.nuxt-vscode-extension.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=RATING" alt="Ratings"></a></p>
 
-This extension aims to simplify the workflow when coding with Nuxt in VS Code
+This extension automates common actions used by developers while developing a Nuxt app.
 
 <a href="https://www.buymeacoffee.com/allanoricil" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
@@ -26,30 +26,39 @@ This extension aims to simplify the workflow when coding with Nuxt in VS Code
 
 <img src="https://drive.google.com/uc?id=1tXfc0zexyzczs3fs6i9wssXNMyETUZ5y"></img>
 
+- Create Store
+
+- Create Page
+
+- Create Component
+
+- Create Standard Directories
+
+
 ## Requirements
 
 - Node >= 14.x
 - npm >= 5.2.0 => this version has npx which is used on the "Nuxt: Create App" command
 
 <!-- COMMANDS_START -->
+## Commands (8)
 
-## Commands (2)
-
-| Command             | Description            |
-| ------------------- | ---------------------- |
-| Nuxt.startDevServer | Nuxt: Start Dev Server |
-| Nuxt.openApp        | Nuxt: Open App         |
-| Nuxt.setPortNumber  | Nuxt: Set Port Number  |
-| Nuxt.createNuxtApp  | Nuxt: Create Nuxt App  |
-
+|Command|Description|
+|-|-|
+|Nuxt.createApp|Nuxt: Create App|
+|Nuxt.startDevServer|Nuxt: Start Dev Server|
+|Nuxt.openApp|Nuxt: Open App|
+|Nuxt.setPortNumber|Nuxt: Set Port Number|
+|Nuxt.ceateStandardDirectories|Nuxt: Create Standard Directories|
+|Nuxt.createPage|Nuxt: Create Page|
+|Nuxt.createComponent|Nuxt: Create Component|
+|Nuxt.createStore|Nuxt: Create Store|
 <!-- COMMANDS_END -->
 
 <!-- SETTINGS_START -->
-
 ## Settings (1)
 
-| Setting         | Type   | Default  | Description                                                                                             |
-| --------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------- |
-| nuxt.portNumber | number | **3000** | It is the port number used by your Nuxt App. If you empty this property, the app is served on port 3000 |
-
+|Setting|Type|Default|Description|
+|-|-|-|-|
+|nuxt.portNumber|number|**3000**|It is the port number used by your Nuxt App. If you empty this property, the app is served on port 3000|
 <!-- SETTINGS_END -->

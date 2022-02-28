@@ -17,7 +17,7 @@
     "color": "#2F495E",
     "theme": "dark"
   },
-  "version": "0.0.20",
+  "version": "0.0.21",
   "engines": {
     "node": "14.x",
     "vscode": "^1.60.0"
@@ -68,7 +68,42 @@
         "title": "Nuxt: Create Store"
       }
     ],
-    "menus": {},
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "Nuxt.createApp",
+          "when": "true"
+        },
+        {
+          "command": "Nuxt.startDevServer",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.openApp",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.setPortNumber",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.ceateStandardDirectories",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.createPage",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.createComponent",
+          "when": "config.nuxt.isNuxtApp"
+        },
+        {
+          "command": "Nuxt.createStore",
+          "when": "config.nuxt.isNuxtApp"
+        }
+      ]
+    },
     "configuration": {
       "title": "Nuxt",
       "properties": {
@@ -76,6 +111,10 @@
           "type": "number",
           "default": 3000,
           "description": "It is the port number used by your Nuxt App. If you empty this property, the app is served on port 3000"
+        },
+        "nuxt.isNuxtApp": {
+          "type": "boolean",
+          "default": true
         }
       }
     }
